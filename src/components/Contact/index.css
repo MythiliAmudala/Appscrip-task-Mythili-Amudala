@@ -1,0 +1,233 @@
+/* Contact/index.css */
+.contact {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,1000 0,1000"/></svg>');
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease;
+}
+
+/* Floating Elements */
+.floating-element {
+    position: absolute;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.2);
+    animation: floatContact 8s ease-in-out infinite;
+    z-index: 1;
+}
+
+.floating-element:nth-child(1) {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+    top: 25%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.floating-element:nth-child(3) {
+    bottom: 35%;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.floating-element:nth-child(4) {
+    bottom: 25%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+.floating-element:nth-child(5) {
+    top: 50%;
+    left: 15%;
+    animation-delay: 4s;
+}
+
+@keyframes floatContact {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 0.2;
+    }
+
+    33% {
+        transform: translateY(-20px) rotate(120deg) scale(1.1);
+        opacity: 0.3;
+    }
+
+    66% {
+        transform: translateY(10px) rotate(240deg) scale(0.9);
+        opacity: 0.1;
+    }
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+    animation: slideInUp 1s ease 0.3s both;
+}
+
+.input-group {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.input-group::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.input-group:focus-within::before {
+    transform: scaleX(1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid rgba(102, 126, 234, 0.1);
+    border-radius: 10px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.contact-form textarea {
+    min-height: 120px;
+}
+
+/* Submit Button */
+.contact-form .btn-primary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form .btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.contact-form .btn-primary:not(:disabled):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+/* Status Messages */
+.status {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    animation: slideInUp 0.5s ease;
+}
+
+.status.success {
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    color: white;
+}
+
+.status.error {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+}
+
+/* Loading State */
+.contact-form .btn-primary:disabled .ri-loader-4-line {
+    animation: spin 1s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact {
+        padding: 5rem 0 3rem;
+    }
+
+    .contact h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact-form {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+
+    .floating-element {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.8rem;
+    }
+
+    .contact-form .btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
