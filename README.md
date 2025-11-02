@@ -5,8 +5,6 @@ A fully responsive, production-grade **Product Listing Page (PLP)** replicating 
 This project demonstrates strong UI engineering, clean React architecture, API-driven UI, CSS animations, and responsive design.
 
 ## Live Demo
-**Vercel:**  
-https://my-8lbudgpo9-mythili-s-projects.vercel.app/
 
 **Netlify:**
 https://appscrip-task-mythili-amudala.netlify.app/
