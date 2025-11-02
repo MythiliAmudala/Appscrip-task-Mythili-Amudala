@@ -6,7 +6,7 @@ This project demonstrates strong UI engineering, clean React architecture, API-d
 
 ## Live Demo
 **Vercel:**  
-https://my-8lbudgpo9-mythili-s-projects.vercel.app/
+https://appscrip-task-mythili-amudala.netlify.app/
 
 ## Objective
 Build a PLP matching the Figma UI, focusing on:
